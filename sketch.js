@@ -28,6 +28,20 @@ function mousePressed() {
   }
 }
 
+function addCell() {
+    cells.push(new Cell());
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+function resetCells() {
+    cells = [];
+    cells.push(new Cell());
+    cells.push(new Cell());
+    cells.push(new Cell());
+    cells.push(new Cell());
+  }
+
+  

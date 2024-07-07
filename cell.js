@@ -34,5 +34,16 @@ function Cell(pos, r, c, speed) {
       var newCell = new Cell(newPos, this.r * 0.8, this.c);
       return newCell;
     }
+
+    this.fuse = function(other) {
+        var d = dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
+        if (d < this.r + other.r) {
+          var newR = sqrt(this.r * this.r + other.r * other.r);
+          var newCell = new Cell(this.pos, newR, this.c);
+          return newCell;
+        } else {
+          return null;
+        }
+      }
   }
   
