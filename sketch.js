@@ -1,13 +1,17 @@
 var cells = [];
 
 function setup() {
-  createCanvas(700, 700);
+  createCanvas(windowWidth, windowHeight);
+  cells.push(new Cell());
+  cells.push(new Cell());
+  cells.push(new Cell());
+  cells.push(new Cell());
   cells.push(new Cell());
   cells.push(new Cell());
 }
 
 function draw() {
-  background(200);
+  background(0);
   for (var i = 0; i < cells.length; i++) {
     cells[i].move();
     cells[i].show();
@@ -22,4 +26,8 @@ function mousePressed() {
       cells.splice(i, 1);
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
